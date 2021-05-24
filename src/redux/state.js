@@ -12,11 +12,11 @@ export let todoData = [
         message: 'text'
     },
     {
-        id: 3,
+        id: 4,
         message: 'text'
     },
     {
-        id: 3,
+        id: 5,
         message: 'text'
     },
 ]
