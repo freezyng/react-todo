@@ -8,7 +8,6 @@ export const todoReducer = (state = todoData, action) => {
         case ADD_TODO:
             newTodos = [...state]
             newTodos.push(action.todo)
-            debugger
             return newTodos
         case DELETE_TODO:
             newTodos = [...state]
