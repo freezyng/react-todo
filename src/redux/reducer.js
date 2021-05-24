@@ -1,19 +1,17 @@
-import { ADD_TODO, DELETE_TODO, addTodo } from './actions';
+import { ADD_TODO, DELETE_TODO } from './actions';
 import {todoData} from './state';
 
 export const todoReducer = (state = todoData, action) => {
+    let newTodos;
 
     switch (action.type) {
         case ADD_TODO:
-            return {
-                ...state,
-                todoData: [
-                    ...state.message,
-                    ...state.id = ++state.message.length
-                ]
-            }
+            newTodos = [...state]
+            newTodos.push(action.todo)
+            debugger
+            return newTodos
         case DELETE_TODO:
-            let newTodos = [...state]
+            newTodos = [...state]
             newTodos = newTodos.filter(todo => todo.id !== action.todoId)
             return newTodos
         default:

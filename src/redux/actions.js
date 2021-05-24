@@ -1,6 +1,6 @@
-export const ADD_TODO = 'ADD_POST';
+export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
-export const UODATE_TODO = 'UODATE_TODO';
+export const UPDATE_TODO = 'UPDATE_TODO';
 
 
 
@@ -13,11 +13,11 @@ export const deleteTodo = (todoId) => {
 }
 
 export const updataTodo = (todo) => {
-    return { type: UODATE_TODO, todo }
+    return { type: UPDATE_TODO, todo }
 }
 
 export const addTodoThunk = (todo) => {
-    return (dispatch) => dispatch(addTodo(todo));
+    return (dispatch) => dispatch( addTodo(todo) );
 }
 
 export const deleteTodoThunk = (todoId) => {
