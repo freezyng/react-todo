@@ -1,14 +1,23 @@
 .row {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .item-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-top: 15px;
 }
 
 .title {
-    margin: 0 100px;
+    margin-left: 20px;
+}
+
+.wrap-btns {
+    display: flex;
+    margin-left: 20px;
 }
 
 .btn-delete {

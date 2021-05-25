@@ -1,9 +1,14 @@
 .App {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
   text-align: center;
+  max-width: 1200px;
 }
 
 
 .btn {
+  height: 30px;
   border: none;
   border-radius: 5px;
   background-color: rgb(108, 130, 255);
