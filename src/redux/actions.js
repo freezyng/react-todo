@@ -23,3 +23,7 @@ export const addTodoThunk = (todo) => {
 export const deleteTodoThunk = (todoId) => {
     return (dispatch) => dispatch(deleteTodo(todoId));
 }
+
+export const updataTodoThunk = (todo) => {
+    return (dispatch) => dispatch( updataTodo(todo) );
+}

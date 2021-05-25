@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO } from './actions';
+import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from './actions';
 import {todoData} from './state';
 
 export const todoReducer = (state = todoData, action) => {
@@ -12,6 +12,10 @@ export const todoReducer = (state = todoData, action) => {
         case DELETE_TODO:
             newTodos = [...state]
             newTodos = newTodos.filter(todo => todo.id !== action.todoId)
+            return newTodos
+        case UPDATE_TODO:
+            newTodos = [...state]
+            newTodos[action.todo.id - 1] = action.todo
             return newTodos
         default:
             return state;
