@@ -1,6 +1,8 @@
 .form-post {
     width: 350px;
     height: 25px;
+    border-radius: 5px;
+    border: 1px solid #2e2d2d63;
 }
 
 .btn-add-post {

@@ -12,6 +12,9 @@ export const todoReducer = (state = todoData, action) => {
         case DELETE_TODO:
             newTodos = [...state]
             newTodos = newTodos.filter(todo => todo.id !== action.todoId)
+            for(let i = 0; i < newTodos.length; i++) {
+                newTodos[i].id = i + 1 
+            }
             return newTodos
         case UPDATE_TODO:
             newTodos = [...state]
