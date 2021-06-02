@@ -16,8 +16,10 @@ function TodoInput(props) {
                 />
                 <button className="btn btn-add-post"
                     onClick={() => {
-                        props.addTodoThunk({id: todoArry.length + 1, message: textTodo})
-                        setTextTodo('')
+                        if(textTodo){
+                            props.addTodoThunk({id: todoArry.length + 1, message: textTodo})
+                            setTextTodo('')
+                        }
                     }}
                 >добавить</button>
             </div>

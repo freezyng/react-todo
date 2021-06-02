@@ -18,7 +18,7 @@ function TodoItem(props) {
                 <div className="wrap-btns">
                     <button className="btn btn-edit" onClick={ () => {
                         if(editable){
-                            props.updataTodoThunk({id: props.todo.id, message: textTodo})
+                            props.updateTodoThunk({id: props.todo.id, message: textTodo})
                         } 
                         setEditable(!editable)
                         }} >изменить</button>

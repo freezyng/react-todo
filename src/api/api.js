@@ -18,6 +18,10 @@ const todoPostAPI = {
         return instance.post('', todo)
         .then(response => response.data);
     },
+    updateTodo(todo) {
+        return instance.put(todo.id, todo.message)
+        .then(response => response.data);
+    },
 }
 
 

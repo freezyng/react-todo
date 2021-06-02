@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from './todoItem.jsx';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import {deleteTodoThunk, updataTodoThunk, getTodoThunk} from '../redux/actions';
+import {deleteTodoThunk, updateTodoThunk, getTodoThunk} from '../redux/actions';
 
 class TodoList extends React.Component {
 
@@ -21,7 +21,7 @@ class TodoList extends React.Component {
             {this.props.todo.map(todo => {
                 return <TodoItem key={todo.id} todo={todo} 
                     deleteTodoThunk={this.props.deleteTodoThunk}
-                    updataTodoThunk={this.props.updataTodoThunk} />
+                    updateTodoThunk={this.props.updateTodoThunk} />
             })}
         </div>)
     }
@@ -33,5 +33,5 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {deleteTodoThunk, updataTodoThunk, getTodoThunk})
+    connect(mapStateToProps, {deleteTodoThunk, updateTodoThunk, getTodoThunk})
 )(TodoList)

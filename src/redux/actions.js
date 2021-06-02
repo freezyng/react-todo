@@ -19,38 +19,36 @@ export const deleteTodo = (todoId) => {
     return { type: DELETE_TODO, todoId }
 }
 
-export const updataTodo = (todo) => {
+export const updateTodo = (todo) => {
     return { type: UPDATE_TODO, todo }
 }
 
 
 //thunks
+export const getTodoThunk = () => {
+    return async (dispatch) => {
+        let response = await todoPostAPI.getDataTodo()
+        dispatch(getTodo(response));
+    }
+}
 
 export const addTodoThunk = (todo) => {
     return async (dispatch) => {
-        let response = await todoPostAPI.addDataTodo(todo)
+        await todoPostAPI.addDataTodo(todo)
         dispatch(getTodoThunk());
     }
 }
 
 export const deleteTodoThunk = (todoId) => {
     return async (dispatch) => {
-        let response = await todoPostAPI.deleteTodo(todoId)
+        await todoPostAPI.deleteTodo(todoId)
         dispatch(getTodoThunk());
     }
 }
 
-export const updataTodoThunk = (todo) => {
-    return (dispatch) => dispatch( updataTodo(todo) );
-}
-
-export const getDataTodoThunk = (todo) => {
-    return (dispatch) => dispatch( getTodo(todo) );
-}
-
-export const getTodoThunk = () => {
+export const updateTodoThunk = (todo) => {
     return async (dispatch) => {
-        let response = await todoPostAPI.getDataTodo()
-        dispatch(getTodo(response));
+        await todoPostAPI.updateTodo(todo)
+        dispatch(getTodoThunk());
     }
 }
