@@ -1,10 +1,14 @@
-import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from './actions';
+import { ADD_TODO, DELETE_TODO, UPDATE_TODO, GET_TODO } from './actions';
 import {todoData} from './state';
 
 export const todoReducer = (state = todoData, action) => {
     let newTodos;
 
     switch (action.type) {
+        case GET_TODO:
+            newTodos = [...state]
+            newTodos = action.todo
+            return newTodos
         case ADD_TODO:
             newTodos = [...state]
             newTodos.push(action.todo)

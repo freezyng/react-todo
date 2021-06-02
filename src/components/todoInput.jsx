@@ -9,7 +9,6 @@ function TodoInput(props) {
     let [textTodo, setTextTodo] = useState()
     return(
         <div>
-            <h2>todo input</h2>
             <div className="row">
                 <input type="text" className="form-post" 
                     value={textTodo}
