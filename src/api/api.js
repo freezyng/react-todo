@@ -6,7 +6,7 @@ const instance = axios.create({
 
 
 
-const todoPostAPI = { 
+const todoPostAPI = {
     getDataTodo() {
         return instance.get()
         .then(response => response.data);
@@ -19,8 +19,7 @@ const todoPostAPI = {
         .then(response => response.data);
     },
     updateTodo(todo) {
-        return instance.put(todo.id, todo.message)
-        .then(response => response.data);
+        return instance.put(todo.id, {message: todo.message})
     },
 }
 
