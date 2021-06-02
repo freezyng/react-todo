@@ -25,8 +25,12 @@ export const updataTodo = (todo) => {
 
 
 //thunks
+
 export const addTodoThunk = (todo) => {
-    return (dispatch) => dispatch( addTodo(todo) );
+    return async (dispatch) => {
+        let response = await todoPostAPI.addDataTodo(todo)
+        dispatch(getTodoThunk());
+    }
 }
 
 export const deleteTodoThunk = (todoId) => {
